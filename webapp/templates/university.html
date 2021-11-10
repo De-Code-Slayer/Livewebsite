@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main>
+    <h2 class="font-bold font-sans break-normal text-green-700 pt-6 pb-2 text-3xl md:text-4xl"> Universities in Turkey & Cyprus</h2>
+    <hr>
+    <div class="card" style="text-align: center;">
+        <div class="card-body">
+            <h5 class="card-title">50% - 70% Scholraship Availabe For Undergraduate and Masters Students</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Application fee as Low as 50USD</h6>
+            <p class="card-text">Study Overseas, No Agent Fee Required, We will guide You all through the procedures required to get your Admission and Visa Successfully.</p>
+            <a {%if user.is_authenticated %} href="/profile" {%endif%}  {%if not user.is_authenticated %}  href="/signup" {%endif%} class="btn btn-primary">Apply</a>
+           
+        </div>
+    </div>
+<h2 class="font-bold text-green-400" style="margin: 40px 0;"> Schools Informations</h2>
+    <!-- <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <h3>NO</h3>
+            </div>
+            <div class="col">
+                <h3>School</h3>
+            </div>
+            <div class="col">
+                <h3>Country</h3>
+            </div>
+            <div class="col">
+                <h3>Region</h3>
+            </div>
+            <div class="col">
+                <h3>Fee</h3>
+            </div>
+            <div class="col">
+                <h3>Scholraship</h3>
+            </div>
+            <div class="col">
+                <h3>Website</h3>
+            </div>
+        </div>
+        <hr>
+        {% if university %}
+           {% for i in university %}
+           <div class="row justify-content-md-center">
+            <div class="col">
+                {{loop.index}}
+            </div>
+            <div class="col">
+                {{i.school}}
+            </div>
+            <div class="col">
+                {{i.country}}
+            </div>
+            <div class="col">
+                {{i.region}}
+            </div>
+            <div class="col">
+                € {{i.fee}}
+            </div>
+            <div class="col">
+                {{i.schorlarship}}
+            </div>
+            <div class="col">
+                <a href="{{i.website}}" target="_blank" rel="noopener noreferrer">Visit Website</a>
+            </div>
+        </div>
+         <hr>
+        {% endfor %}     
+        {% endif %}
+        
+        <div class="row justify-content-md-center">
+
+
+
+    </div> -->
+
+
+    
+
+
+<!-- <div class="container flex justify-center mx-auto">
+    <div class="flex flex-col">
+        <div class="w-full">
+            <div class="border-b border-gray-200 shadow">
+                <table class="divide-y divide-gray-300 ">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Number
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                School
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Country
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Region
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Fees
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Schorlarship
+                            </th>
+                            <th class="px-6 py-2 text-xs text-gray-500">
+                                Website
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-300">
+                        {% if university %}
+                         {% for i in university %}
+                        <tr class="whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                {{loop.index}}
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-900">
+                                    {{i.school}}
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="text-sm text-gray-500">{{i.country}}</div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                                {{i.region}}
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="px-4 py-1 text-sm text-blue-600 bg-green-300 rounded-full">€ {{i.fee}}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="px-4 py-1 text-sm text-red-400 bg-red-200 rounded-full">{{i.schorlarship}}</div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="{{i.website}}"  target="_blank" rel="noopener noreferrer" class="px-4 py-1 text-sm text-blue-400 bg-blue-200 rounded-full">Visit Website</a>
+                            </td>
+                        </tr>
+                         {% endfor %}     
+                        {% endif %}
+                        
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<section class="py-1 bg-blueGray-50">
+    <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+        <div class="rounded-t mb-0 px-4 py-3 border-0">
+          <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+              <h3 class="font-semibold text-base text-blueGray-700">Universities (Unranked)</h3>
+            </div>
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+              <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">See all</button>
+            </div>
+          </div>
+        </div>
+    
+        <div class="block w-full overflow-x-auto">
+          <table class="items-center bg-transparent w-full border-collapse ">
+            <thead>
+              <tr>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                              No
+                            </th>
+              <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                              School
+                            </th>
+               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                             Country
+                            </th>
+              
+                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Region
+                              </th>
+                              <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Fees
+                              </th>
+                              <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Schorlarship
+                              </th>
+                              <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Website
+                              </th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                {% if university %}
+                {% for i in university %}
+                <tr class="whitespace-nowrap">
+                    <td class="px-6 py-4 text-sm text-gray-500">
+                        {{loop.index}}
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="text-sm text-gray-900">
+                            {{i.school}}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="text-sm text-gray-500">{{i.country}}</div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-500">
+                        {{i.region}}
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="px-4 py-1 text-sm text-blue-600 bg-green-300 rounded-full">€ {{i.fee}}</div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="px-4 py-1 text-sm text-red-400 bg-red-200 rounded-full">{{i.schorlarship}}</div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="{{i.website}}"  target="_blank" rel="noopener noreferrer" class="px-4 py-1 text-sm text-blue-400 bg-blue-200 rounded-full">Visit Website</a>
+                    </td>
+                </tr>
+                {% endfor %}     
+                {% endif %}
+            </tbody>
+    
+          </table>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+
+    <h2 class="font-bold text-green-400" style="margin: 40px 0;"> Requirements To Study in Cyprus</h2>
+    <div class="container flex items-center justify-center h-auto p-5 bg-gray-100">
+        <ol class="shadow-xl rounded-lg text-gray-500 break-normal">
+
+            <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>International Passport Valid for 3 years</b></li>
+            <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Bachelors certificate & Transcript (Masters)/ High school Leaving Certificate(Under Graduate)</b></li>
+            <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>6 Passport Photographs</b></li>
+            <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>No Visa Or Embassy Required</b></li>
+            <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Negative Covid-19PCR Test (Before Traveling)</b></li>
+        
+        </ol>
+    </div>
+    <hr>
+    <h2 class="font-bold text-green-400" style="margin: 40px 0;"> Requirements To Study in Turkey</h2>
+    <div class="container">
+        <div class="flex items-center justify-center h-auto p-5 bg-gray-100">
+
+            <ol class="shadow-xl rounded-lg  text-gray-500 break-normal">
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>International Passport Valid for 3 years</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>TOEFL/IELTS</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Bachelors certificate & Transcript (Masters)/ High school Leaving Certificate(Under Graduate)</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>14 Passport Photographs</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Visa</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Negative Covid-19PCR Test (Before Traveling)</b></li>
+            </ol>
+        </div>
+        <h2 class="font-bold text-green-400" style="margin: 40px 0;" > Requirements For Turkey Student Visa</h3>
+        <div class="flex items-center justify-center h-auto p-5 bg-gray-100">
+
+            <ol class="shadow-xl rounded-lg  text-gray-500 break-normal">
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>International Passport Valid for 3 years</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Bank Statement for Last 6 months (Proof of sufficient funds)</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Admission Letter</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>14 Passport Phootographs</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Flight Itenerary </b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer" ><b>Flight Reservation</b></li>
+                <li class="p-4 hover:bg-gray-50 cursor-pointer"><b>Proof of Accomodation</b></li>
+                
+            </div>
+
+        </ol>
+    </div>
+</main>
+
+
+
+{% endblock %}

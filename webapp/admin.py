@@ -18,17 +18,18 @@ def administrator():
      if request.method == "POST":
          # this is to seperate the admin page requests payloads
          section = str(request.form.get("section"))
-         print(section)
+         
          if section == "Blog":
-                print("Blog")
          #add if statements to check if the post added are long enough and acutually valid
                 articletitle = str(request.form.get("articletitle")).title()
                 articles = str(request.form.get("articles")).title()
                 author = str(request.form.get("author")).title()
                 file = request.files['file']
                 if file:
+                 
                  file_path = save_file(file)
-               
+                else:
+                    file_path = None
                      
                   
                   

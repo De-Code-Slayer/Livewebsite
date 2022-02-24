@@ -7,7 +7,7 @@ import os
 from os.path import join, dirname, realpath
 
 db = SQLAlchemy()
-DB_NAME = "mywebappdatabase.db"
+DB_NAME = "database-1.cmjajipac6t9.us-east-2.rds.amazonaws.com"
 ALLOWED_EXTENSIONS = {'png', 'jpg','jpeg'}
 UPLOADS_PATH = join(dirname(realpath(__file__)), 'static\images')
 # basedir = os.path.abspath(os.path.dirname(__file__))
@@ -18,8 +18,8 @@ app = Flask(__name__)
 
 def create_app():
  global app
- app.config["SECRET_KEY"] = "JHHGUIF HUHUH HHUF UH"
- app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///{}".format(DB_NAME)
+ app.config["SECRET_KEY"] = "Titans232."
+ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Titans232.@{}:5432".format(DB_NAME)
  app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
  app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -33,7 +33,7 @@ def create_app():
  app.register_blueprint(admin, url_prefix="/" )
 
  from .models import User, Articles
- create_database(app)
+#  create_database(app)
 
 
  login_manager = LoginManager()
@@ -67,6 +67,6 @@ def save_file(file):
             # return url_for('static', filename="images/{filename}")
             return filename
 def create_database(app):
-    if not path.exists("webapp/" + DB_NAME):
+    # if not path.exists("webapp/" + DB_NAME):
         db.create_all(app=app)
         print("Database created!!")

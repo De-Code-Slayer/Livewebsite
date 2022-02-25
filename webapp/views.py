@@ -47,7 +47,6 @@ def more(id):
 
 
 @views.route("/whatsapp", methods=["GET", "POST"])
-@login_required
 def whatsapp():
     if request.method == "POST":
         institute = request.form.get("category")

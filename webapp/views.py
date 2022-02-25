@@ -47,11 +47,12 @@ def more(id):
 
 
 @views.route("/whatsapp", methods=["GET", "POST"])
+@login_required
 def whatsapp():
     if request.method == "POST":
         institute = request.form.get("category")
         category = Whatsapp.query.filter_by(institute=institute).all()
-        print(category)
+        # print(category)
         if category:
             whatsapp = category
             return render_template("whatsapp.html", whatsapp=whatsapp, user=current_user,  id="!!")

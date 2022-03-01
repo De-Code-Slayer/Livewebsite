@@ -58,7 +58,7 @@ def administrator():
          elif section == "HowTo":
          #add if statements to check if the links added are acutually valid
                 title = str(request.form.get("title")).title()
-                content = str(request.form.get("content")).title()
+                content = str(request.form.get("content"))
 
      
                 new_howto = Howto(

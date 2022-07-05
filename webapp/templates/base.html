@@ -83,6 +83,11 @@
                     <a class="nav-link" href="/profile"><i class="fas fa-briefcase"></i>Profile</a>
                 </li>
                 {%endif%}
+                {% if user.is_authenticated %}
+                <li class="nav-item {% if request.path == '/business' in request.path  %} active {% endif %}">
+                    <a class="nav-link" href="/business"><i class="fa fa-money"></i>Make Money</a>
+                </li>
+                {%endif%}
                 <li class="nav-item {% if request.path == '/university' %} active {% endif %} ">
                     <a class="nav-link" href="/university"><i class="fas fa-graduation-cap"></i>University</a>
                 </li>

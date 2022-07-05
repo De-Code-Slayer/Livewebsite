@@ -1,7 +1,7 @@
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from .models import User
-from .models import Articles, Whatsapp, Howto, University
+from .models import Articles, Whatsapp, Howto, University, Items
 from . import db
 from flask_login import login_user, login_required, current_user
 from . import save_file
@@ -86,8 +86,24 @@ def administrator():
                 flash("University updated")
 
          
-         
-         
+         elif section == "Business":
+            print("Business")
+            name = str(request.form.get("name")).title()
+            category = str(request.form.get("category")).title()
+            percentage = str(request.form.get("percentage")).title()
+            image = request.files['file']
+        
+            if image:
+                 
+              file_path = save_file(image)
+            else:
+              file_path = None
+
+            new_item = Items(
+                    name=name, category=category, percentage=percentage, image=file_path)
+            db.session.add(new_item)
+            db.session.commit()
+            flash("Item Added successfully")
          else:
             flash("error")
      return render_template("admin_page.html")

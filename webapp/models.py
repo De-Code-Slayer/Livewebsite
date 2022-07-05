@@ -36,6 +36,7 @@ class User(db.Model, UserMixin):
     flight = db.Column(db.Integer())
     arrival = db.Column(db.Integer())
     admin = db.Column(db.Boolean, default=False)
+    business_signed_up = db.Column(db.Boolean, default=False)
 #-------------------------------  end of database for blog -------------------------------------
 
 
@@ -64,3 +65,15 @@ class University(db.Model):
     fee = db.Column(db.String()) 
     schorlarship = db.Column(db.String())  
     website = db.Column(db.String()) 
+
+
+
+
+class Items(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    category = db.Column(db.String())
+    percentage = db.Column(db.Integer)
+    image = db.Column(db.String())
+
+   

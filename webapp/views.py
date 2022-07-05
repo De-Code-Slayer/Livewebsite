@@ -2,7 +2,7 @@
 
 from flask.helpers import flash
 from sqlalchemy.sql.expression import asc
-from .models import Articles, Whatsapp, Howto, User, University
+from .models import Articles, Whatsapp, Howto, User, University,Items
 from flask import Blueprint, render_template, url_for, request, redirect
 from flask_login import login_user, login_required, logout_user, current_user
 from . import db
@@ -80,7 +80,7 @@ def view_how_to(id):
 def university():
 
     university = University.query.order_by(asc(University.school)).all()
-    print(university)
+    # print(university)
 
     return render_template("university.html", university=university, user=current_user,  id="!!")
 
@@ -102,6 +102,39 @@ def profile():
         flash("Application Submitted")
 
     return render_template("profile.html", student=current_user, user=current_user,  id="!!")
+
+
+
+
+
+@views.route("/business", methods=["GET", "POST"])
+@login_required
+def business():
+    items = Items.query.all()
+    hotitems = Items.query.order_by(Items.percentage.desc()).limit(4).all()
+    # print(hotitems,"**------------------------------------M.>>>>>>>>")
+
+    return render_template("jobsample.html", student=current_user,items=items,hotitems=hotitems, user=current_user, id="!!")
+
+
+@views.route("/business/accept", methods=["GET", "POST"])
+@login_required
+def takedeal():
+    current_user.business_signed_up = True
+    db.session.commit()
+
+    return redirect(url_for("views.business"))
+
+@views.route("/business/decline", methods=["GET", "POST"])
+@login_required
+def declinedeal():
+    current_user.business_signed_up = False
+    db.session.commit()
+    print(current_user.business_signed_up,"=====================================>>>>>>>>>>>>>.")
+    return redirect(url_for("views.business"))
+
+
+
 
 
 @views.route("/signup", methods=["GET", "POST"])

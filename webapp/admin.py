@@ -9,6 +9,37 @@ admin = Blueprint("admin", __name__)
 
 
 
+@admin.route("/api/postnews", methods=["GET", "POST"])
+def api():
+     if request.method == "POST":
+         # this is to seperate the admin page requests payloads
+         section = str(request.form.get("section"))
+         
+         if section == "Blog":
+         #add if statements to check if the post added are long enough and acutually valid
+                articletitle = str(request.form.get("articletitle")).title()
+                articles = str(request.form.get("articles")).title()
+                author = str(request.form.get("author")).title()
+                file = None
+                if file:
+                 
+                 file_path = save_file(file)
+                else:
+                    file_path = None
+                     
+                  
+                  
+                  
+                new_article = Articles(
+            articles=articles, author=author, articletitle=articletitle, file_path=file_path)
+                db.session.add(new_article)
+                db.session.commit()
+     return "successful"
+
+
+
+
+
 @admin.route("/admin", methods=["GET", "POST"])
 @login_required
 def administrator():

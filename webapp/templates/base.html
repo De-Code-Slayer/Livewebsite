@@ -53,7 +53,8 @@
 
 </head>
 
-<body  onload="myFunction()">
+{% set url = url_for('static',filename="assets/images/paper.jpg") %}
+<body  onload="myFunction()" style="background:rgb(248, 246, 246);">
     <nav class="navbar navbar-expand-custom navbar-mainbg">
         <div class="navbar-brand navbar-logo font-bold" href="#">Turkey</div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

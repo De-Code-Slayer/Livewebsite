@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %} 
 <!--Container-->
-<div class="container w-full md:max-w-7xl mx-auto pt-20">
+{% set url = url_for('static',filename="assets/images/paper.jpg") %}
 
-    <div class="w-full px-4 md:px-8 text-lg text-gray-900 leading-8" style="font-family:Georgia,serif;">
+<div class="container w-full md:max-w-7xl mx-auto pt-20" style="background:url('{{url}}');">
+
+    <div class="w-full px-4 md:px-8 text-lg text-gray-900 leading-8 border-2 " style="font-family:Georgia,serif;opacity: 0.8;">
 
         <!--Title-->
        

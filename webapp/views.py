@@ -88,6 +88,11 @@ def university():
 @views.route("/profile", methods=["GET", "POST"])
 @login_required
 def profile():
+
+    course = db.session.query(University.school).all()
+    # for i in course:
+    #     print(i[0])
+
     if request.method == "POST":
         school = str(request.form.get("university")).title()
         course = str(request.form.get("course")).title()
@@ -101,7 +106,7 @@ def profile():
         db.session.commit()
         flash("Application Submitted")
 
-    return render_template("profile.html", student=current_user, user=current_user,  id="!!")
+    return render_template("profile.html", student=current_user, user=current_user, course=course,  id="!!")
 
 
 

@@ -22,8 +22,10 @@ def create_app():
  app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://u964930141_guide:Titans232@{}:3306/u964930141_guideagent".format(DB_NAME)
  app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
  app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+ app.config['SQLALCHEMY_POOL_RECYCLE'] = 30
 
- db.init_app(app)
+ with app.app_context():   
+    db.init_app(app)
 
  from .views import views
  from .admin import admin

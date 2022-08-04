@@ -10,3 +10,4 @@ SQLAlchemy==1.4.25
 Werkzeug==2.0.2
 gunicorn
 psycopg2
+mysqlclient

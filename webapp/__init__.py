@@ -7,7 +7,7 @@ import os
 from os.path import join, dirname, realpath
 
 db = SQLAlchemy()
-DB_NAME = "database-1.cmjajipac6t9.us-east-2.rds.amazonaws.com"
+DB_NAME = "217.21.76.1"
 ALLOWED_EXTENSIONS = {'png', 'jpg','jpeg'}
 UPLOADS_PATH = join(dirname(realpath(__file__)), 'static/images')
 # basedir = os.path.abspath(os.path.dirname(__file__))
@@ -18,8 +18,8 @@ app = Flask(__name__)
 
 def create_app():
  global app
- app.config["SECRET_KEY"] = "Titans232."
- app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:Titans232.@{}:5432".format(DB_NAME)
+ app.config["SECRET_KEY"] = "Titans232"
+ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://u964930141_guide:Titans232@{}:3306/u964930141_guideagent".format(DB_NAME)
  app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
  app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

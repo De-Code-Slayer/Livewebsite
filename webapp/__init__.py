@@ -52,6 +52,11 @@ def create_app():
  @app.errorhandler(404)
  def page_not_found(error):
     return render_template('page_not_found.html'), 404
+
+# ERROR PAGE HANDLER
+ @app.errorhandler(500)
+ def page_not_found(error):
+    return error, 500
  
  return app
 

@@ -2,13 +2,13 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KIBRIS</title>
+    <title>KIBRIS-Turkey</title>
     <meta name="description" content="Building A Deeper Network">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/style.css">
@@ -52,6 +52,22 @@
 </script>
 
 </head>
+<!-- <style>
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style> -->
 
 {% set url = url_for('static',filename="assets/images/paper.jpg") %}
 <body  onload="myFunction()" style="background:rgb(248, 246, 246);">
@@ -95,6 +111,10 @@
                 <li class="nav-item {% if request.path == '/whatsapp' %} active {% endif %}">
                     <a class="nav-link" href="/whatsapp"><i class="fab fa-whatsapp-square"></i>Whats App
                         Group</a>
+                </li>
+                <li class="nav-item {% if request.path == '/about' %} active {% endif %}">
+                    <a class="nav-link" href="/about"><i class="fab fa-whatsapp-square"></i>About Us
+                        </a>
                 </li>
                 {% if not user.is_authenticated %}
                 <li class="nav-item">

@@ -122,6 +122,13 @@ def business():
     return render_template("jobsample.html", student=current_user,items=items,hotitems=hotitems, user=current_user, id="!!")
 
 
+
+@views.route("/about")
+def about():
+    
+    return render_template("about.html", student=current_user,user=current_user, id="!!")
+
+
 @views.route("/business/accept", methods=["GET", "POST"])
 @login_required
 def takedeal():
